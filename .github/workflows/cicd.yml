@@ -148,7 +148,7 @@ jobs:
             --version 6.7.3 \
             --set server.service.type=ClusterIP \
             --set configs.params."server\.insecure"=true \
-            --timeout 10m \
+            --timeout 15m \
             --wait
 
       - name: Print ArgoCD admin password
@@ -176,12 +176,12 @@ jobs:
             --create-namespace \
             --version 4.10.1 \
             --set controller.service.type=LoadBalancer \
-            --timeout 10m \
+            --timeout 15m \
             --wait
 
       # - name: Apply ClusterIssuer
       #   run: kubectl apply -f clusterissuer.yaml
-      
+
       - name: Verify all deployments
         run: |
           # echo "--- cert-manager pods ---"
