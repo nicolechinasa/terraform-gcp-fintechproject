@@ -18,5 +18,5 @@ variable "cluster_name" {
 variable "authorised_ipv4_cidr" {
   description = "Your IP address allowed to access the GKE control plane"
   type        = string
-  default     = "0.0.0.0/0"   # replace with your actual IP for security
+  default     = "0.0.0.0/0" # replace with your actual IP for security
 }
