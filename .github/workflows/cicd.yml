@@ -54,12 +54,12 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
 
-            ---------------------------------------------------------------
-            Terraform Destroy — uncomment ONLY when you want to tear down
-            all infrastructure. This will delete the cluster, VPC, subnet,
-            NAT, and router permanently. Use with caution.
-            ---------------------------------------------------------------
-            
+          #  ---------------------------------------------------------------
+          #  Terraform Destroy — uncomment ONLY when you want to tear down
+          #  all infrastructure. This will delete the cluster, VPC, subnet,
+          #  NAT, and router permanently. Use with caution.
+          #  ---------------------------------------------------------------
+
       - name: Terraform Destroy
         run: |
           terraform destroy -auto-approve \
