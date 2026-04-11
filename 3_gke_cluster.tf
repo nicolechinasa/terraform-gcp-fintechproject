@@ -2,6 +2,8 @@ resource "google_container_cluster" "bank_cluster" {
   name     = var.cluster_name
   location = var.region
 
+  deletion_protection = false    # add this line
+  
   enable_autopilot = true
 
   network    = google_compute_network.bank_vpc.id
