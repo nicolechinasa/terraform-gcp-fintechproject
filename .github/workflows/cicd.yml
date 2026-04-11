@@ -123,6 +123,11 @@ jobs:
         with:
           version: "v3.14.0"
 
+      - name: Cleanup ArgoCD (if exists)
+        run: |
+          helm uninstall argocd -n argocd || true
+          kubectl delete namespace argocd || true
+
       # - name: Deploy CertManager
       #   run: |
       #     kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.4/cert-manager.crds.yaml
@@ -148,8 +153,12 @@ jobs:
             --version 6.7.3 \
             --set server.service.type=ClusterIP \
             --set configs.params."server\.insecure"=true \
-            --timeout 15m \
-            --wait
+            --wait=false
+
+          echo "Waiting for ArgoCD to be ready..."
+          kubectl wait --for=condition=available deployment/argocd-server \
+            -n argocd --timeout=15m
+            
 
       - name: Print ArgoCD admin password
         run: |
