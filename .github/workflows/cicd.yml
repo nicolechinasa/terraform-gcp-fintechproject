@@ -60,12 +60,12 @@ jobs:
           #  NAT, and router permanently. Use with caution.
           #  ---------------------------------------------------------------
 
-      - name: Terraform Destroy
-        run: |
-          terraform destroy -auto-approve \
-            -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
-            -var="region=${{ env.GKE_REGION }}" \
-            -var="cluster_name=${{ env.GKE_CLUSTER }}"
+      # - name: Terraform Destroy
+      #   run: |
+      #     terraform destroy -auto-approve \
+      #       -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
+      #       -var="region=${{ env.GKE_REGION }}" \
+      #       -var="cluster_name=${{ env.GKE_CLUSTER }}"
 
   configure-cluster:
     name: Configure Cluster
