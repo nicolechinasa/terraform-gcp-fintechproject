@@ -6,7 +6,7 @@ variable "project_id" {
 variable "region" {
   description = "GCP region to deploy resources into"
   type        = string
-  default     = "us-east1"
+  default     = "us-central1"
 }
 
 variable "cluster_name" {
