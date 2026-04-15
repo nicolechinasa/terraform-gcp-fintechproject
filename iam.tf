@@ -6,7 +6,7 @@ resource "google_service_account" "bank_app_sa" {
 
 resource "google_artifact_registry_repository_iam_member" "ar_reader" {
   project    = var.project_id
-  location   = "us-central1"   # your AR region
+  location   = "us-central1" # your AR region
   repository = "bank-repo"
   role       = "roles/artifactregistry.reader"
   member     = "serviceAccount:${google_service_account.bank_app_sa.email}"
