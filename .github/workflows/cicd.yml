@@ -58,7 +58,7 @@ jobs:
           #  ---------------------------------------------------------------
           #  Terraform Destroy — uncomment ONLY when you want to tear down
           #  all infrastructure. This will delete the cluster, VPC, subnet,
-          #  NAT, and router permanently. Use with caution.
+          #  NAT, and router permanently. Use with caution..
           #  ---------------------------------------------------------------
 
       # - name: Terraform Destroy
